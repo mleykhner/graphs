@@ -80,7 +80,11 @@
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "8 -m &quot;/Users/mleykhner/Documents/GraphLab/Tasks/task8/map_002.txt&quot; -n 0 0 -d 9 9"
+            argument = "8 -m &quot;/Users/mleykhner/Documents/GraphLab/Tasks/task8/map_005.txt&quot; -n 12 0 -d 22 21"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "9 -m &quot;/Users/mleykhner/Documents/GraphLab/Tasks/task9/matrix_t9_001.txt&quot; -b"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

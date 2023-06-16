@@ -52,7 +52,7 @@ func runTest(_ task: Int, args: ArraySlice<String> = []) {
         Task6.self,
         Task7.self,
         Task7.self,
-        Task7.self,
+        Task9.self,
         Task10.self,
         Task11.self
     ]

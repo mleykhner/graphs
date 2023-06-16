@@ -700,10 +700,58 @@
             filePath = "grapher/Task8.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "AStar(start:heuristics:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BC02FAC-4F3B-4B92-83AF-8F40C08E8E0A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "grapher/Task9.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "Ants()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4BC02FAC-4F3B-4B92-83AF-8F40C08E8E0A - bb6f9411cbb46e5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "grapher.Task9.Ants() -&gt; Swift.String"
+                  moduleName = "grapher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mleykhner/Documents/grapher/grapher/grapher/Task9.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1631">
+               </Location>
+               <Location
+                  uuid = "4BC02FAC-4F3B-4B92-83AF-8F40C08E8E0A - 92d2121b60511d79"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 ((key: Swift.Int, value: Swift.Int)) -&gt; Swift.Bool in grapher.Task9.Ants() -&gt; Swift.String"
+                  moduleName = "grapher"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mleykhner/Documents/grapher/grapher/grapher/Task9.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

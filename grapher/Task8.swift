@@ -44,27 +44,69 @@ class Task8 {
 
     func run() -> String {
         startCell.path = 0
-        let path = AStar(start: startCell, heuristics: Cell.ManhattanDistance)
-        var path2: [Cell] = []
+        //let _ = AStar(start: startCell, heuristics: Cell.ManhattanDistance)
+        let _ = AStar(heuristics: Cell.ManhattanDistance)
+        var path: [Cell] = []
         //var sum = 0
         var currentCell: Cell? = myMap.map[endCell.y][endCell.x]
         while currentCell != nil {
-            path2.insert(currentCell!, at: 0)
+            path.insert(currentCell!, at: 0)
             currentCell = currentCell!.cameFrom
         }
-        print ("\(path2.first!.path)\n\(path2)\n\(path)")
+        print ("\(path[path.count - 1].path)\n\(path)")
         return "Hello"
     }
+    
+    func AStar(heuristics: ((Cell, Cell) -> Int)) -> Bool {
+        var computing: [Cell] = [startCell]
 
-    func AStar(start: Cell, heuristics: ((Cell, Cell) -> Int)) -> [Cell] {
-        if start.computed { return [] }
+        while !computing.isEmpty {
+            let c = computing.min(by: { $0.path + heuristics($0, endCell) < $1.path + heuristics($1, endCell)})!
+            computing.remove(at: computing.firstIndex(where: { $0 == c })!)
+            if c == endCell {
+                return true
+            }
+            c.computed = true
+            let neighbors = myMap.neighbors(c)
+            
+            for i in (0..<neighbors.count) {
+                if neighbors[i].computed { continue }
+                let dist = c.path + abs(c.height - neighbors[i].height) + 1
+                var isBest = false
+                if !computing.contains(where: { cc in cc == neighbors[i] }) {
+                    isBest = true
+                    computing.append(neighbors[i])
+                } else if dist < neighbors[i].path {
+                    isBest = true
+                }
+                
+                if isBest {
+                    neighbors[i].cameFrom = c
+                    neighbors[i].path = dist
+                }
+            }
+            
+//            neighbors.forEach {
+//                let dist = c.path + abs(c.height - $0.height) + 1
+//                if !$0.computed && $0.path > dist {
+//                    $0.cameFrom = c
+//                    $0.path = dist
+//                    computing.append($0)
+//                }
+//            }
+        }
+        return false
+    }
+
+    func AStar(start: Cell, heuristics: ((Cell, Cell) -> Int)) -> Bool {
+        if start.computed { return false }
         start.computed = true
-        if start == endCell { return [start] }
+        if start == endCell { return true }
         
         let neighbors = myMap.neighbors(start)
-        neighbors.forEach {
+        neighbors.filter { !$0.computed }.forEach {
             let dist = start.path + abs(start.height - $0.height) + 1
-            if dist < $0.path && !$0.computed {
+            if dist < $0.path {
                 $0.cameFrom = start
                 $0.path = dist
             }
@@ -80,12 +122,11 @@ class Task8 {
                     minCell = neighbors[i]
                 }
             }
-            let passedCells = AStar(start: minCell, heuristics: heuristics)
-            if !passedCells.isEmpty {
-                return [start] + passedCells
+            if AStar(start: minCell, heuristics: heuristics) {
+                return true
             }
         }
-        return []
+        return false
     }
 }
 
